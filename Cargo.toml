@@ -1,0 +1,23 @@
+[package]
+name = "wordless"
+version = "0.1.0"
+edition = "2024"
+description = "Hyper-minimal, Vim-driven .docx pager with plain-text Wayland yanking"
+license = "MIT"
+
+[dependencies]
+# TUI: crossterm backend only, no extra widgets/macros.
+ratatui = { version = "0.30", default-features = false, features = ["crossterm"] }
+# OOXML container: only the DEFLATE codec Word actually uses.
+zip = { version = "9", default-features = false, features = ["deflate"] }
+# Zero-copy pull parser over word/document.xml.
+quick-xml = "0.42"
+unicode-width = "0.2"
+cfb = "0.15.0"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Wordless
+Comment=Minimal Vim-driven .docx reader
+Exec=kitty --class wordless wordless %f
+Terminal=false
+NoDisplay=true
+Categories=Office;Viewer;
+MimeType=application/vnd.openxmlformats-officedocument.wordprocessingml.document;
